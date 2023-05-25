@@ -50,9 +50,6 @@ app.get('/', function (req, res) {
 //POST route
 app.post('/textAnalysis', analyzeText);
 
-const dataList = [];
-var reqStatus = 0;
-
 function analyzeText(req, res) {
 
     console.log(req.body);
@@ -76,4 +73,16 @@ function analyzeText(req, res) {
     })
 }
 
-
+const getSentimentAnalysis = async (url, requestOptions) => {
+    const response = await fetch(url, requestOptions);
+    try {
+         // Transform into JSON
+        const status = await response.status;
+        const data = await response.json();
+        console.log(status, data)
+        return data;
+    } catch (error) {
+        console.log('Error:', error);
+        // appropriately handle the error
+    }
+};

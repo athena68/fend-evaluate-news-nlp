@@ -23,7 +23,7 @@ First, you will need to go [here](https://www.meaningcloud.com/developer/create-
 - [ ] Fill the .env file with your API keys like this:
 ```
 API_KEY=**************************
-
+```
 ## Running
 - `npm run build-prod`
 - `npm run start`
